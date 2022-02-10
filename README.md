@@ -26,7 +26,10 @@ in sorted list. Here user can search and filter out country and select country.
 
 [comment]: <> (![ScreenShot]&#40;assets/a3.jpeg&#41;)
 
-<img src="assets/a1.jpeg" width="200" height="200"/>
+<img src="assets/a1.jpeg" width="200" height="600"/>
+<img src="assets/a2.jpeg" width="200" height="600"/>
+<img src="assets/a3.jpeg" width="200" height="600"/>
+
 ## Getting started
 
 Add package to your pubspec.yaml file:
