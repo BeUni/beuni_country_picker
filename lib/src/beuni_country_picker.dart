@@ -29,11 +29,7 @@ class _BeuniCountryPickerState extends State<BeuniCountryPicker> {
   @override
   void initState() {
     super.initState();
-    if (widget.countryList.isEmpty) {
-      addFillteredList();
-    } else {
-      filteredRecords.addAll(widget.countryList);
-    }
+    addFillteredList();
   }
 
   @override
@@ -84,22 +80,24 @@ class _BeuniCountryPickerState extends State<BeuniCountryPicker> {
                           });
                         },
                       ),
-                      searchText.isNotEmpty ? Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                searchText = '';
-                                controller.clear();
-                                addFillteredList();
-                              });
-                            },
-                            icon: const Icon(Icons.close),
-                          ),
-                        ),
-                      ): Container()
+                      searchText.isNotEmpty
+                          ? Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      searchText = '';
+                                      controller.clear();
+                                      addFillteredList();
+                                    });
+                                  },
+                                  icon: const Icon(Icons.close),
+                                ),
+                              ),
+                            )
+                          : Container()
                     ],
                   ),
                 )
@@ -137,7 +135,11 @@ class _BeuniCountryPickerState extends State<BeuniCountryPicker> {
   }
 
   void addFillteredList() async {
-    originalRecords = BeuniUtil().getCountryList();
+    if (widget.countryList.isNotEmpty) {
+      originalRecords = widget.countryList;
+    } else {
+      originalRecords = BeuniUtil().getCountryList();
+    }
     filteredRecords.clear();
     filteredRecords.addAll(originalRecords);
   }

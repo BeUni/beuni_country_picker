@@ -11,29 +11,112 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Beuni_country_picker
+
+A flutter package to select Country code from New Screen, BottomSheet and Dialog box.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+In this package we are showing countries with Country code, Country Name and also showing flags also
+in sorted list. Here user can search and filter out country and select country.
+
+![ScreenShot](assets/a1.jpeg)
+![ScreenShot](assets/a2.jpeg)
+![ScreenShot](assets/a3.jpeg)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add package to your pubspec.yaml file:
+
+```yaml
+beuni_country_picker ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Usage in BottomSheet:-
 
 ```dart
-const like = 'sample';
+void bottomSheet() {
+  showModalBottomSheet(
+    context: context,
+    enableDrag: true,
+    builder: (BuildContext context) {
+      return BeuniCountryPicker(
+          countryList: [],
+          onCountryClick: (Country country) {
+            print(country.name);
+            Navigator.of(context).pop();
+          });
+    },
+  );
+}
 ```
 
-## Additional information
+Usage in Dialog
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+void showDialog1() {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        child: BeuniCountryPicker(
+            searchText: "Search Here",
+            isSearchVisible: false,
+            countryList: [],
+            onCountryClick: (Country country) {
+              print(country.name);
+              Navigator.of(context).pop();
+            }),
+      );
+    },
+  );
+}
+```
+
+## Parameters:
+
+* 'countryList':- Need to pass country list if you have your country list otherwise pass []. (
+  required)
+* 'onCountryClick':- This is called on user Click on country
+* 'searchText':- In this need to pass String to set hint in Search field.
+* 'isSearchVisible':- Default this is true for showing Search TextField, make it false to hide
+  Search TextField
+
+```yaml
+BeuniCountryPicker(
+searchText: "Search Here",
+isSearchVisible: false,
+countryList: [ ],
+onCountryClick: (Country country) {
+  print(country.name);
+});
+```
+
+If you want add your add your own country list you can also do it:-
+
+```dart
+import 'package:beuni_country_picker/src/model/country.dart';
+```
+
+Add country value like below, Here one more thing you can add flag emoji or network url for image
+
+```dart
+
+Country country = Country(
+    dialCode: "+91",
+    flag: "https://flagcdn.com/32x24/in.png",
+    code: "IN",
+    name: "India"
+);
+```
+
+Note:- SVG image url is not supported yet
+
+## Contributions
+
+Contributions of any kind are more than welcome! Feel free to fork and improve country_code_picker
+in any way you want, make a pull request, or open an issue.

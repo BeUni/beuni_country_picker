@@ -5,14 +5,13 @@ class BeuniUtil {
     List<Country> countries = [];
     for (var value in countryList) {
       countries.add(Country(
-        name: value['name'],
-        code: value['code'],
-        flag: value['flag'],
-        dialCode: value['dial_code']
-      ));
+          name: value['name'],
+          code: value['code'],
+          flag: value['flag'],
+          dialCode: value['dial_code']));
     }
 
-    countries.sort((a,b) => a.name!.compareTo(b.name!));
+    countries.sort((a, b) => a.name!.compareTo(b.name!));
 
     return countries;
   }
