@@ -20,16 +20,19 @@ A flutter package to select Country code from New Screen, BottomSheet and Dialog
 In this package we are showing countries with Country code, Country Name and also showing flags also
 in sorted list. Here user can search and filter out country and select country.
 
-![ScreenShot](assets/a1.jpeg)
-![ScreenShot](assets/a2.jpeg)
-![ScreenShot](assets/a3.jpeg)
+[comment]: <> (![ScreenShot]&#40;assets/a1.jpeg&#41;)
 
+[comment]: <> (![ScreenShot]&#40;assets/a2.jpeg&#41;)
+
+[comment]: <> (![ScreenShot]&#40;assets/a3.jpeg&#41;)
+
+<img src="assets/a1.jpeg" width="200" height="200"/>
 ## Getting started
 
 Add package to your pubspec.yaml file:
 
 ```yaml
-beuni_country_picker ^0.0.1
+beuni_country_picker 0.0.2
 ```
 
 ## Usage
