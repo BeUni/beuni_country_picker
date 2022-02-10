@@ -1,8 +1,7 @@
 name: beuni_country_picker
 description: A new Flutter package project.
 version: 0.0.1
-author: Shivam Sharma
-homepage:
+homepage: https://github.com/BeUni/beuni_country_picker
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
@@ -24,8 +23,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   # To add assets to your package, add an assets section, like this:
-  assets:
-  - assets/country/
+  # assets:
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

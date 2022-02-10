@@ -2,8 +2,6 @@ import 'package:beuni_country_picker/src/model/country.dart';
 
 class BeuniUtil {
   List<Country> getCountryList() {
-    // String countryListString = await rootBundle.loadString('assets/country/country.json');
-    // List<dynamic> countryListValue = countryList;
     List<Country> countries = [];
     for (var value in countryList) {
       countries.add(Country(
