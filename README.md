@@ -35,7 +35,7 @@ in sorted list. Here user can search and filter out country and select country.
 Add package to your pubspec.yaml file:
 
 ```yaml
-beuni_country_picker 0.0.2
+beuni_country_picker: 0.0.4
 ```
 
 ## Usage

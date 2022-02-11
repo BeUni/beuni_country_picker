@@ -1,7 +1,7 @@
 name: beuni_country_picker
 description: In this package we are showing countries with Country code, Country Name and also showing flags also
   in sorted list. Here user can search and filter out country and select country.
-version: 0.0.2
+version: 0.0.4
 homepage: https://github.com/BeUni/beuni_country_picker
 
 environment:
